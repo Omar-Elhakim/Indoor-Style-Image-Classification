@@ -1,1 +1,28 @@
-/StyleClassificationIndoors
+# Dataset
+/StyleClassificationIndoors/
+
+# Trained model weights (too large for git)
+*.pth
+
+# Archives
+*.zip
+
+# Test/sample images
+/Practical_Test_Samples/
+
+# Generated submission files
+submission*.csv
+*_submission.csv
+
+# Duplicate export folders
+/SC_20/
+/NN Project/
+/vit-from-scratch/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
