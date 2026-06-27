@@ -96,8 +96,8 @@ def generate_predictions():
             ids.extend(filenames)
             predictions.extend(preds.cpu().numpy())
 
-            df = pd.DataFrame({'id': ids, 'label': predictions})
-            df.to_csv('submission.csv', index=False)
+    df = pd.DataFrame({'id': ids, 'label': predictions})
+    df.to_csv('submission.csv', index=False)
 
 if __name__ == "__main__":
     generate_predictions()

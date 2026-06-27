@@ -222,9 +222,6 @@ def run_test():
 
             predictions.extend(preds.cpu().tolist())
             file_names.extend(names)
-            # E. Save CSV
-            df = pd.DataFrame({'ImageName': file_names, 'ClassLabel': predictions})
-            df.to_csv(OUTPUT_CSV, index=False)
 
             if (i + 1) % 5 == 0:
                 print(f"Processed batch {i + 1}/{len(test_loader)}")

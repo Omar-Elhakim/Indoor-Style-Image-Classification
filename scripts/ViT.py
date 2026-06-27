@@ -96,7 +96,7 @@ class TestDataset(Dataset):
 
         try:
             img = Image.open(img_path).convert("RGB")
-        except:
+        except (UnidentifiedImageError, OSError):
             print(f"Warning: corrupted image {file_name}")
             img = Image.new("RGB", (224, 224), color="black")
 
@@ -139,13 +139,6 @@ def run_inference():
 
             preds.extend(predicted.cpu().tolist())
             names.extend(img_names)
-            df = pd.DataFrame({
-            "ImageName": names,
-            "ClassLabel": preds
-            })
-
-            df.to_csv(OUTPUT_CSV, index=False)
-
 
     df = pd.DataFrame({
         "ImageName": names,
